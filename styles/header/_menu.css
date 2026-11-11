@@ -1,0 +1,57 @@
+.menu {
+    width: 100%;
+    height: 100px;
+    padding: 16px max(calc(50% - 720px), 64px);
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu__logo {
+    width: 32px;
+    height: 32px;
+    justify-self: flex-start;
+}
+
+.menu__logo>img {
+    width: 100%;
+    height: 100%;
+}
+
+.menu__nav {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+
+    justify-self: center;
+}
+
+.menu__toggle {
+    width: 48px;
+    height: 24px;
+    background-color: rgb(121, 121, 121);
+    border-radius: 24px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 0 4px;
+
+    cursor: pointer;
+}
+
+.menu__toggle_circle {
+    width: 16px;
+    height: 16px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.toggle {
+    justify-content: flex-end;
+}

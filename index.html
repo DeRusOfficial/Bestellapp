@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/variables/variables.css">
+    <link rel="stylesheet" href="./assets/fonts/_montserrat.css">
+    <link rel="stylesheet" href="./assets/fonts/_rubikdoodleshadow.css">
+    <link rel="stylesheet" href="./styles/header/_menu.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon/favicon.png">
+    <title>Express Bestellung</title>
+</head>
+
+<body>
+    <header class="menu">
+        <div class="menu__logo">
+            <img src="./assets/icons/logo/logo.png" alt="Logo">
+        </div>
+        <navbar class="menu__nav">
+            <a href="#">Home</a>
+            <a href="#">Speisen</a>
+            <a href="#">Getränke</a>
+        </navbar>
+        <div class="menu__toggle" onclick="toggleBg()">
+            <div class="menu__toggle_circle"></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="main__bg">
+            <img src="./assets/img/meals/piroggen.jpg" alt="Bild von Piroggen">
+        </section>
+        <section class="submenu">
+            <h2>Speisen</h2>
+            <div class="submenu__categories">
+                <a href="#">Griechische Gerichte</a>
+                <a href="#">Italienische Gerichte</a>
+                <a href="#">Russische Gerichte</a>
+            </div>
+        </section>
+        <section class="meals">
+
+        </section>
+        <section class="cart">
+
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
