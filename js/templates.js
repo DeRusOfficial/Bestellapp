@@ -2,7 +2,7 @@ function getMealTemplate(i) {
     return `
         <div class="meals__card">
             <div class="meals__card_img">
-                <img src="${mealsDatabase[i].img}" alt="${mealsDatabase[i].img}">
+                <img loading="lazy" src="${mealsDatabase[i].img}" alt="${mealsDatabase[i].img}">
             </div>
             <div class="meals__card_content">
                 <h3 class="meals__card_content-header">${mealsDatabase[i].name}</h3>
