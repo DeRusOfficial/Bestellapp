@@ -10,7 +10,7 @@ function getMealTemplate(i) {
                 <div class="meals__card_content-price">${mealsDatabase[i].price}</div>
                 <div class="meals__card_content-descr">${mealsDatabase[i].description}</div>
             </div>
-            <a href="#"><img src="./assets/icons/counter/plus.svg" alt="Button als Plus-Bild"></a>
+            <button><img src="./assets/icons/counter/plus.svg" alt="Button als Plus-Bild"></button>
         </div>
     `;
 }

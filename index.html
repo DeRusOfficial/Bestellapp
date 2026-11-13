@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/variables/variables.css">
+    <link rel="stylesheet" href="./styles/variables/_variables.css">
     <link rel="stylesheet" href="./assets/fonts/_montserrat.css">
     <link rel="stylesheet" href="./assets/fonts/_rubikdoodleshadow.css">
     <link rel="stylesheet" href="./styles/header/_menu.css">
@@ -44,7 +44,7 @@
                 </nav>
             </section>
             <section class="content__group">
-                <section class="meals" id="meals">
+                <section class="meals" id="mealsField">
                     <!-- <div class="meals__card">
                         <div class="meals__card_img">
                             <img src="" alt="">
@@ -60,7 +60,38 @@
                 </section>
 
                 <section class="cart">
-
+                    <h3 class="cart__header">Warenkorb</h3>
+                    <div class="cart__positions">
+                        <div class="card__positions_meal" id="cartField">
+                            <div class="card__positions_meal-details">
+                                <p class="meal-name">Borschtsch</p>
+                                <p class="meal-price">9.50 EURO</p>
+                            </div>
+                            <div class="card__positions_meal-count">
+                                <button><img src="./assets/icons/counter/minus.svg" alt="Weniger"></button>
+                                <p>2</p>
+                                <button><img src="./assets/icons/counter/plus.svg" alt="Mehr"></button>
+                            </div>
+                            <button class="card__positions_meal-bin" role="button">
+                                <img src="./assets/icons/bin.svg" alt="Mülltonne">
+                            </button>
+                        </div>
+                    </div>
+                    <table class="cart__costs">
+                        <tr class="cart__costs_delivery">
+                            <th>Lieferkosten:</th>
+                            <td>5.00 EURO</td>
+                        </tr>
+                        <tr class="cart__costs_tax">
+                            <th>Mwst.:</th>
+                            <td>0.95 EURO</td>
+                        </tr>
+                        <tr class="cart__costs_sum">
+                            <th>Gesamtsumme:</th>
+                            <td>5.00 EURO</td>
+                        </tr>
+                    </table>
+                    <button>Jetzt bestellen!</button>
                 </section>
             </section>
         </section>
