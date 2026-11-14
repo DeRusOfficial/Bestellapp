@@ -17,17 +17,17 @@ function returnMealTemplate(i) {
 
 function returnCartTemplate(mealData, i) {
     return `
-        <div class="card__positions_meal">
-            <div class="card__positions_meal-details">
+        <div id="position-${mealData[i].name}" class="cart__positions_meal">
+            <div class="cart__positions_meal-details">
                 <p class="meal-name">${mealData[i].name}</p>
                 <p class="meal-price">${mealData[i].price}</p>
             </div>
-            <div class="card__positions_meal-amount">
+            <div class="cart__positions_meal-amount">
                 <button onclick="subtractAmount(${i})"><img src="./assets/icons/counter/minus.svg" alt="Weniger"></button>
                 <p id="amountId-${i}">${mealData[i].amount}</p>
                 <button onclick="addAmount(${i})"><img src="./assets/icons/counter/plus.svg" alt="Mehr"></button>
             </div>
-            <button class="card__positions_meal-bin" onclick="deletePosition(${i})">
+            <button class="cart__positions_meal-bin" onclick="deletePosition(${i})">
                 <img src="./assets/icons/bin.svg" alt="Mülltonne">
             </button>
         </div>

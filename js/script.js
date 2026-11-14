@@ -33,7 +33,9 @@ function loadMeals() {
 }
 
 function subtractAmount(i) {
-    if (mealsDatabase[i].amount > 1) {
+    if (mealsDatabase[i].amount === 1) {
+        deletePosition(i);
+    } else {
         mealsDatabase[i].amount--;
         saveMealsAtLS();
         loadAmountOfMeal(i);
@@ -49,6 +51,8 @@ function addAmount(i) {
 function deletePosition(i) {
     mealsDatabase[i].amount = 0;
     saveMealsAtLS();
+    let mealData = getMealFromLocalStorage();
+    document.getElementById(`position-${mealData[i].name}`).remove();
 }
 
 function loadAmountOfMeal(i) {
