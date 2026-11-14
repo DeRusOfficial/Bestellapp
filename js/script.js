@@ -28,16 +28,6 @@ function loadMeals() {
     }
 }
 
-loadCart()
-
-function loadCart() {
-    for (let i = 0; i < mealsDatabase.length; i++) {
-        if (mealsDatabase[i].amount !== 0) {
-            cartField.innerHTML += returnCartTemplate(i)
-        }
-    }
-}
-
 function saveMealsAtLS() {
     localStorage.setItem('mealsDatabaseAtLS', JSON.stringify(mealsDatabase))
 }
