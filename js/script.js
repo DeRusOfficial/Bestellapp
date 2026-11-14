@@ -13,11 +13,15 @@ function init() {
 }
 
 function addToCart(i) {
-    mealsDatabase[i].amount++;
-    saveMealsAtLS();
-
     let mealData = getMealFromLocalStorage();
-    cartField.innerHTML += returnCartTemplate(mealData, i)
+    if (!cartField.innerHTML.includes(mealData[i].name)) {
+        mealsDatabase[i].amount++;
+        saveMealsAtLS();
+        mealData = getMealFromLocalStorage();
+        cartField.innerHTML += returnCartTemplate(mealData, i);
+    } else {
+        addAmount(i);
+    }
 }
 
 loadMeals()
@@ -26,6 +30,31 @@ function loadMeals() {
     for (let i = 0; i < mealsDatabase.length; i++) {
         mealsField.innerHTML += returnMealTemplate(i)
     }
+}
+
+function subtractAmount(i) {
+    if (mealsDatabase[i].amount > 1) {
+        mealsDatabase[i].amount--;
+        saveMealsAtLS();
+        loadAmountOfMeal(i);
+    }
+}
+
+function addAmount(i) {
+    mealsDatabase[i].amount++;
+    saveMealsAtLS();
+    loadAmountOfMeal(i);
+}
+
+function deletePosition(i) {
+    mealsDatabase[i].amount = 0;
+    saveMealsAtLS();
+}
+
+function loadAmountOfMeal(i) {
+    let mealData = getMealFromLocalStorage();
+    let amountId = document.getElementById(`amountId-${i}`);
+    return amountId.innerHTML = mealData[i].amount;
 }
 
 function saveMealsAtLS() {
