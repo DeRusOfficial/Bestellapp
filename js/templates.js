@@ -1,4 +1,4 @@
-function getMealTemplate(i) {
+function returnMealTemplate(i) {
     return `
         <div class="meals__card">
             <div class="meals__card_img">
@@ -11,6 +11,25 @@ function getMealTemplate(i) {
                 <div class="meals__card_content-descr">${mealsDatabase[i].description}</div>
             </div>
             <button><img src="./assets/icons/counter/plus.svg" alt="Button als Plus-Bild"></button>
+        </div>
+    `;
+}
+
+function returnCartTemplate(i) {
+    return `
+        <div class="card__positions_meal">
+            <div class="card__positions_meal-details">
+                <p class="meal-name">${mealsDatabase[i].name}</p>
+                <p class="meal-price">${mealsDatabase[i].price}</p>
+            </div>
+            <div class="card__positions_meal-count">
+                <button><img src="./assets/icons/counter/minus.svg" alt="Weniger"></button>
+                <p>${mealsDatabase[i].amount}</p>
+                <button><img src="./assets/icons/counter/plus.svg" alt="Mehr"></button>
+            </div>
+            <button class="card__positions_meal-bin" role="button">
+                <img src="./assets/icons/bin.svg" alt="Mülltonne">
+            </button>
         </div>
     `;
 }
