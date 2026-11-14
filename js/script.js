@@ -6,6 +6,20 @@ function toggleBg() {
     toggleBtn.classList.toggle("toggle");
 }
 
+
+
+function init() {
+    saveMealsAtLS();
+}
+
+function addToCart(i) {
+    mealsDatabase[i].amount++;
+    saveMealsAtLS();
+
+    let mealData = getMealFromLocalStorage();
+    cartField.innerHTML += returnCartTemplate(mealData, i)
+}
+
 loadMeals()
 
 function loadMeals() {
@@ -22,4 +36,12 @@ function loadCart() {
             cartField.innerHTML += returnCartTemplate(i)
         }
     }
+}
+
+function saveMealsAtLS() {
+    localStorage.setItem('mealsDatabaseAtLS', JSON.stringify(mealsDatabase))
+}
+
+function getMealFromLocalStorage() {
+    return JSON.parse(localStorage.mealsDatabaseAtLS)
 }
