@@ -26,10 +26,10 @@ function returnCartTemplate(mealData, i) {
                 <button onclick="subtractAmount(${i})"><img src="./assets/icons/counter/minus.svg" alt="Weniger"></button>
                 <p id="amountId-${i}">${mealData[i].amount}</p>
                 <button onclick="addAmount(${i})"><img src="./assets/icons/counter/plus.svg" alt="Mehr"></button>
+                <button class="cart__positions_meal-bin" onclick="deletePosition(${i})">
+                    <img src="./assets/icons/bin.svg" alt="Mülltonne">
+                </button>
             </div>
-            <button class="cart__positions_meal-bin" onclick="deletePosition(${i})">
-                <img src="./assets/icons/bin.svg" alt="Mülltonne">
-            </button>
         </div>
     `;
 }
