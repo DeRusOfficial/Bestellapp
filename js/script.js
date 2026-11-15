@@ -18,21 +18,21 @@ function init() {
 }
 
 function renderCart() {
-    let mealData = getMealFromLocalStorage();
-    for (let i = 0; i < mealData.length; i++) {
-        if (mealData[i].amount !== 0) {
-            cartField.innerHTML += returnCartTemplate(mealData, i);
+    let mealDataLS = getMealFromLocalStorage();
+    for (let i = 0; i < mealDataLS.length; i++) {
+        if (mealDataLS[i].amount !== 0) {
+            cartField.innerHTML += returnCartTemplate(mealDataLS, i);
         }
     }
 }
 
 function addToCart(i) {
-    let mealData = getMealFromLocalStorage();
-    if (!cartField.innerHTML.includes(mealData[i].name)) {
+    let mealDataLS = getMealFromLocalStorage();
+    if (!cartField.innerHTML.includes(mealDataLS[i].name)) {
         mealsDatabase[i].amount++;
         saveMealsAtLS();
-        mealData = getMealFromLocalStorage();
-        cartField.innerHTML += returnCartTemplate(mealData, i);
+        mealDataLS = getMealFromLocalStorage();
+        cartField.innerHTML += returnCartTemplate(mealDataLS, i);
         showTotalCosts();
     } else {
         addAmount(i);
@@ -51,8 +51,8 @@ function subtractAmount(i) {
     if (mealsDatabase[i].amount === 1) {
         deletePosition(i);
     } else {
-        let mealData = getMealFromLocalStorage();
-        mealsDatabase[i].amount = mealData[i].amount;
+        let mealDataLS = getMealFromLocalStorage();
+        mealsDatabase = mealDataLS;
         mealsDatabase[i].amount--;
         saveMealsAtLS();
         loadAmountOfMeal(i);
@@ -61,8 +61,8 @@ function subtractAmount(i) {
 }
 
 function addAmount(i) {
-    let mealData = getMealFromLocalStorage();
-    mealsDatabase[i].amount = mealData[i].amount;
+    let mealDataLS = getMealFromLocalStorage();
+    mealsDatabase = mealDataLS;
     mealsDatabase[i].amount++;
     saveMealsAtLS();
     loadAmountOfMeal(i);
@@ -70,28 +70,29 @@ function addAmount(i) {
 }
 
 function deletePosition(i) {
+    let mealDataLS = getMealFromLocalStorage();
+    mealsDatabase = mealDataLS;
     mealsDatabase[i].amount = 0;
     saveMealsAtLS();
-    let mealData = getMealFromLocalStorage();
-    document.getElementById(`position-${mealData[i].name}`).remove();
+    document.getElementById(`position-${mealsDatabase[i].name}`).remove();
     showTotalCosts();
 }
 
 function showTotalCosts() {
     let sumField = document.getElementById('sum');
     let taxField = document.getElementById('tax');
-    let mealData = getMealFromLocalStorage();
-    totalCosts = calculateTotalCosts(mealData);
+    let mealDataLS = getMealFromLocalStorage();
+    totalCosts = calculateTotalCosts(mealDataLS);
     taxes = calculateTaxes(totalCosts);
     sumField.innerHTML = totalCosts.toFixed(2) + ' EURO';
     taxField.innerHTML = taxes.toFixed(2) + ' EURO';
 }
 
-function calculateTotalCosts(mealData) {
+function calculateTotalCosts(mealDataLS) {
     let totalCosts = 0;
-    for (let i = 0; i < mealData.length; i++) {
-        if (mealData[i].amount !== 0) {
-            totalCosts = totalCosts + mealData[i].amount * parseFloat(mealData[i].price);
+    for (let i = 0; i < mealDataLS.length; i++) {
+        if (mealDataLS[i].amount !== 0) {
+            totalCosts = totalCosts + mealDataLS[i].amount * parseFloat(mealDataLS[i].price);
         }
     }
     totalCosts = totalCosts + deliveryCost;
@@ -105,9 +106,9 @@ function calculateTaxes(totalCosts) {
 }
 
 function loadAmountOfMeal(i) {
-    let mealData = getMealFromLocalStorage();
+    let mealDataLS = getMealFromLocalStorage();
     let amountId = document.getElementById(`amountId-${i}`);
-    return amountId.innerHTML = mealData[i].amount;
+    return amountId.innerHTML = mealDataLS[i].amount;
 }
 
 function saveMealsAtLS() {
