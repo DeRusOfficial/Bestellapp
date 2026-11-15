@@ -10,6 +10,7 @@ function toggleBg() {
 
 
 function init() {
+    loadMeals();
     if (localStorage.getItem('mealsDatabaseAtLS') === null) {
         saveMealsAtLS();
     } else {
@@ -29,21 +30,29 @@ function renderCart() {
 function addToCart(i) {
     let mealDataLS = getMealFromLocalStorage();
     if (!cartField.innerHTML.includes(mealDataLS[i].name)) {
+        mealsDatabase = mealDataLS;
         mealsDatabase[i].amount++;
         saveMealsAtLS();
-        mealDataLS = getMealFromLocalStorage();
-        cartField.innerHTML += returnCartTemplate(mealDataLS, i);
+        cartField.innerHTML += returnCartTemplate(mealsDatabase, i);
         showTotalCosts();
     } else {
         addAmount(i);
     }
 }
 
-loadMeals()
+
 
 function loadMeals() {
     for (let i = 0; i < mealsDatabase.length; i++) {
         mealsField.innerHTML += returnMealTemplate(i)
+    }
+}
+
+function filterMeals(filter) {
+    mealsField.innerHTML = '';
+    for (let i = 0; i < mealsDatabase.length; i++) {
+        if (mealsDatabase[i].category === filter)
+            mealsField.innerHTML += returnMealTemplate(i);
     }
 }
 
