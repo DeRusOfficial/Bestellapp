@@ -31,7 +31,7 @@
     gap: 24px;
 }
 
-.content__menu_categories>a {
+.content__menu_categories>button {
     width: max-content;
     color: black;
     text-decoration: none;
@@ -39,11 +39,11 @@
     position: relative;
 }
 
-.content__menu_categories>a:hover {
+.content__menu_categories>button:hover {
     color: grey;
 }
 
-.content__menu_categories>a::after {
+.content__menu_categories>button::after {
     content: '';
     width: 0;
     height: 1px;
@@ -54,7 +54,7 @@
     transition: all 255ms ease-in-out;
 }
 
-.content__menu_categories>a:hover::after {
+.content__menu_categories>button:hover::after {
     width: 30%;
 }
 

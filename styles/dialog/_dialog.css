@@ -1,0 +1,7 @@
+.dialog {
+    justify-self: center;
+    align-self: center;
+    &::backdrop {
+        background: rgba(0, 0, 0, 0.7);
+    }
+}

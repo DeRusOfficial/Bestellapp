@@ -117,7 +117,44 @@ function calculateTaxes(totalCosts) {
 function loadAmountOfMeal(i) {
     let mealDataLS = getMealFromLocalStorage();
     let amountId = document.getElementById(`amountId-${i}`);
+    if (!amountId) {
+        console.log("HTML:", document.getElementById(amountId), "Daten:", mealDataLS[i]);
+        console.log(cartField.innerHTML);
+        console.warn(`Element ${amountId} wurde im HTML nicht gefunden! Daten dazu:`, mealDataLS[i]);
+        return;
+    }
     return amountId.innerHTML = mealDataLS[i].amount;
+}
+
+function makeOrder() {
+    let dialog = document.getElementById('dialogContent');
+    let mealDataLS = getMealFromLocalStorage();
+    mealsDatabase = mealDataLS;
+    dialog.innerHTML = `
+        <p>Ihre Bestellung wurde aufgegeben</p>
+        <button class="dialog__content_btn-close" onclick="closeDialog()">Schließen</button>
+    `;
+    for (let i = 0; i < mealsDatabase.length; i++) {
+        if (mealsDatabase[i].amount > 0) {
+            mealsDatabase[i].amount = 0
+            saveMealsAtLS();
+            document.getElementById(`position-${mealsDatabase[i].name}`).remove();
+            showTotalCosts();
+        }
+    }
+    init();
+}
+
+function openDialog() {
+    let dialog = document.getElementById('dialog');
+
+    dialog.showModal();
+}
+
+function closeDialog() {
+    let dialog = document.getElementById('dialog');
+
+    dialog.close();
 }
 
 function saveMealsAtLS() {
