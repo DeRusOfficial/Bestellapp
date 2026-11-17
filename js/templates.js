@@ -33,3 +33,15 @@ function returnCartTemplate(mealData, i) {
         </div>
     `;
 }
+
+function returnCartTemplateAtModal(mealDataLS, i) {
+    return `
+        <div id="cart-position-${mealDataLS[i].name}" class="cart__positions_meal">
+            <div class="cart__positions_meal-details">
+                <p class="meal-name">${mealDataLS[i].name}</p>
+                <p class="meal-price">${mealDataLS[i].price}</p>
+            </div>
+            <p id="amountId-${i}">${mealDataLS[i].amount}x</p>
+        </div>
+    `;
+}

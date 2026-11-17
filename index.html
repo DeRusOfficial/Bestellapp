@@ -38,6 +38,7 @@
                     <button onclick="filterMeals('Griechische Gerichte')">Griechische Gerichte</button>
                     <button onclick="filterMeals('Italienische Gerichte')">Italienische Gerichte</button>
                     <button onclick="filterMeals('Russische Gerichte')">Russische Gerichte</button>
+                    <button onclick="loadAllMeals()">Alle Gerichte</button>
                 </nav>
             </section>
             <section class="content__group">
@@ -70,16 +71,24 @@
         </section>
     </main>
 
-    <dialog id="dialog" class="dialog">
-        <div class="dialog__content" id="dialogContent">
-            <div class="dialog__content_header">Ihre Bestellung</div>
-            <button class="dialog__content_btn-order" onclick="makeOrder()">Endgültig bestellen</button>
-            <button class="dialog__content_btn-close" onclick="closeDialog()">Schließen</button>
-        </div>
+    <dialog id="dialog">
+        <section class="modal">
+            <div class="modal__header">Ihre Bestellung</div>
+            <div class="modal__content" id="modalContent">
+
+            </div>
+            <div id="cartSum"></div>
+            <div class="modal__buttons">
+                <button class="modal__content_btn-order" onclick="makeOrder()">Endgültig bestellen</button>
+                <button class="modal__content_btn-close" onclick="closeDialog()">Schließen</button>
+            </div>
+        </section>
     </dialog>
 
     <script src="js/mealsDatabase.js"></script>
     <script src="js/templates.js"></script>
+    <script src="js/functional.js"></script>
+    <script src="js/dialog.js"></script>
     <script src="js/script.js"></script>
 </body>
 
