@@ -36,12 +36,22 @@ function returnCartTemplate(mealData, i) {
 
 function returnCartTemplateAtModal(mealDataLS, i) {
     return `
-        <div id="cart-position-${mealDataLS[i].name}" class="cart__positions_meal">
-            <div class="cart__positions_meal-details">
-                <p class="meal-name">${mealDataLS[i].name}</p>
-                <p class="meal-price">${mealDataLS[i].price}</p>
-            </div>
-            <p id="amountId-${i}">${mealDataLS[i].amount}x</p>
-        </div>
+        <tr class="modal__table_meal">
+            <th scope="row">
+                <span class="meal-name">${mealDataLS[i].name}</span>
+                <span class="meal-price">${mealDataLS[i].price}</span>
+            </th>
+            <td class="modal__table_amount">${mealDataLS[i].amount}x</td>
+        </tr>
     `;
 }
+
+// `
+// <div class="modal__table_meal">
+//     <div class="modal__table_meal-position">
+//         <p class="meal-name">${mealDataLS[i].name}</p>
+//         <p class="meal-price">${mealDataLS[i].price}</p>
+//     </div>
+//     <p class="modal__content_meal-amount">${mealDataLS[i].amount}x</p>
+// </div>
+// `

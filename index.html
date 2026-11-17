@@ -65,7 +65,7 @@
                             <td id="sum">5.00 EURO</td>
                         </tr>
                     </table>
-                    <button onclick="openDialog()">Jetzt bestellen!</button>
+                    <button id="dialogBtn" class="btn-blocked" onclick="openDialog()" disabled>Jetzt bestellen!</button>
                 </section>
             </section>
         </section>
@@ -74,12 +74,21 @@
     <dialog id="dialog">
         <section class="modal">
             <div class="modal__header">Ihre Bestellung</div>
-            <div class="modal__content" id="modalContent">
+            <table class="modal__table">
+                <thead id="tableHead">
+                    <tr>
+                        <th scope="col">Gericht und Preis</th>
+                        <th scope="col">Menge</th>
+                    </tr>
+                </thead>
 
-            </div>
+                <tbody id="tableBody">
+
+                </tbody>
+            </table>
             <div id="cartSum"></div>
             <div class="modal__buttons">
-                <button class="modal__content_btn-order" onclick="makeOrder()">Endgültig bestellen</button>
+                <button id="orderBtn" class="modal__content_btn-order" onclick="makeOrder()">Endgültig bestellen</button>
                 <button class="modal__content_btn-close" onclick="closeDialog()">Schließen</button>
             </div>
         </section>

@@ -1,8 +1,19 @@
 let toggleBtn = document.querySelector(".menu__toggle");
+let orderBtn = document.getElementById('orderBtn');
+let dialogBtn = document.getElementById('dialogBtn');
+
 let mealsField = document.getElementById("mealsField");
 let cartField = document.getElementById("cartField");
+
+let sumField = document.getElementById('sum');
+let taxField = document.getElementById('tax');
 let deliveryCost = 5;
+
 let dialog = document.getElementById('dialog');
+let tableHead = document.getElementById('tableHead');
+let tableBody = document.getElementById('tableBody');
+
+
 
 function toggleBg() {
     toggleBtn.classList.toggle("toggle");
@@ -17,15 +28,6 @@ function init() {
         saveMealsAtLS();
     } else {
         renderCart();
-    }
-}
-
-function renderCart() {
-    let mealDataLS = getMealFromLocalStorage();
-    for (let i = 0; i < mealDataLS.length; i++) {
-        if (mealDataLS[i].amount !== 0) {
-            cartField.innerHTML += returnCartTemplate(mealDataLS, i);
-        }
     }
 }
 

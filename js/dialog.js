@@ -1,18 +1,20 @@
-function renderCartAtModal(modal, mealDataLS) {
+function renderCartAtModal(tableBody, mealDataLS) {
     for (let i = 0; i < mealDataLS.length; i++) {
         if (mealDataLS[i].amount !== 0) {
-            modal.innerHTML += returnCartTemplateAtModal(mealDataLS, i);
+            tableBody.innerHTML += returnCartTemplateAtModal(mealDataLS, i);
         }
     }
 }
 
 function makeOrder() {
-    let modal = document.getElementById('modalContent');
     let mealDataLS = getMealFromLocalStorage();
     mealsDatabase = mealDataLS;
     clearCart(mealsDatabase);
-    modal.innerHTML = '';
-    modal.innerHTML = '<p>Ihre Bestellung wurde aufgegeben</p>';
+    tableHead.innerHTML = '';
+    tableBody.innerHTML = '';
+    tableBody.innerHTML = '<p>Ihre Bestellung wurde aufgegeben und wird in kürze bearbeitet. Wir danken Ihnen vielmals und wünschen Ihnen noch einen angenehmen Tag!</p>';
+    orderBtn.classList.add('btn-blocked');
+    orderBtn.disable = true;
     init();
 }
 
@@ -28,13 +30,14 @@ function clearCart(mealsDatabase) {
 }
 
 function openDialog() {
-    let modal = document.getElementById('modalContent');
     let mealDataLS = getMealFromLocalStorage();
-    modal.innerHTML = ``;
-    renderCartAtModal(modal, mealDataLS);
+    tableBody.innerHTML = ``;
+    renderCartAtModal(tableBody, mealDataLS);      
     dialog.showModal();
 }
 
 function closeDialog() {
     dialog.close();
+    orderBtn.classList.remove('btn-blocked');
+    orderBtn.disable = false;
 }

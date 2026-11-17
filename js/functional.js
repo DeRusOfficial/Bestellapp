@@ -13,6 +13,16 @@ function filterMeals(filter) {
     }
 }
 
+
+function renderCart() {
+    let mealDataLS = getMealFromLocalStorage();
+    for (let i = 0; i < mealDataLS.length; i++) {
+        if (mealDataLS[i].amount !== 0) {
+            cartField.innerHTML += returnCartTemplate(mealDataLS, i);
+        }
+    }
+}
+
 function addToCart(i) {
     let mealDataLS = getMealFromLocalStorage();
     if (!cartField.innerHTML.includes(mealDataLS[i].name)) {
@@ -63,14 +73,24 @@ function loadAmountOfMeal(i) {
     return amountId.innerHTML = mealDataLS[i].amount;
 }
 
+
 function showTotalCosts() {
-    let sumField = document.getElementById('sum');
-    let taxField = document.getElementById('tax');
     let mealDataLS = getMealFromLocalStorage();
     totalCosts = calculateTotalCosts(mealDataLS);
     taxes = calculateTaxes(totalCosts);
+    proofCostsForDelivery(totalCosts);
     sumField.innerHTML = totalCosts.toFixed(2) + ' EURO';
     taxField.innerHTML = taxes.toFixed(2) + ' EURO';
+}
+
+function proofCostsForDelivery(totalCosts) {
+    if (totalCosts > 25) {
+        dialogBtn.classList.remove('btn-blocked');
+        dialogBtn.disabled = false;
+    }  else {
+        dialogBtn.classList.add('btn-blocked');
+        dialogBtn.disabled = true;
+    }
 }
 
 function calculateTotalCosts(mealDataLS) {
