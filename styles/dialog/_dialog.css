@@ -2,10 +2,6 @@
     width: 400px;
     height: 500px;
 
-    /* display: flex;
-    flex-direction: column;
-    gap: 16px; */
-
     justify-self: center;
     align-self: center;
 
@@ -57,13 +53,9 @@
     text-align: left;
 }
 
-/* .modal__table>tbody tr td:nth-child(3){
-    margin-left: auto;
+#modalSum {
+    text-align: center;
 }
-
-.modal__table>tbody tr td:nth-child(2){
-    margin-top: auto;
-} */
 
 .modal__buttons {
     display: flex;

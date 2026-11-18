@@ -76,8 +76,8 @@ function loadAmountOfMeal(i) {
 
 function showTotalCosts() {
     let mealDataLS = getMealFromLocalStorage();
-    totalCosts = calculateTotalCosts(mealDataLS);
-    taxes = calculateTaxes(totalCosts);
+    let totalCosts = calculateTotalCosts(mealDataLS);
+    let taxes = calculateTaxes(totalCosts);
     proofCostsForDelivery(totalCosts);
     sumField.innerHTML = totalCosts.toFixed(2) + ' EURO';
     taxField.innerHTML = taxes.toFixed(2) + ' EURO';
@@ -108,4 +108,20 @@ function calculateTaxes(totalCosts) {
     let taxes = 0;
     taxes = totalCosts * 0.19;
     return taxes
+}
+
+function toggleBg() {
+    let array = makeThemeArray()
+    toggleBtn.classList.toggle('toggle');
+    array.forEach((element) => {
+        element.classList.toggle('darkTheme');
+    });
+}
+
+function makeThemeArray() {
+    const whiteThemeArray = [];
+    for (let i = 0; i < whiteTheme.length; i++) {
+        whiteThemeArray.push(whiteTheme[i])
+    }
+    return whiteThemeArray
 }

@@ -1,3 +1,6 @@
 :root {
-    --main-color: white;
+    --whiteTheme-bgColor: white;
+    --darkTheme-bgColor: rgb(50, 50, 50);
+    --whiteTheme-color: black;
+    --darkTheme-color: white;
 }

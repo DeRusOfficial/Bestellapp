@@ -33,7 +33,7 @@
 
 .content__menu_categories>button {
     width: max-content;
-    color: black;
+    /* color: black; */
     text-decoration: none;
     cursor: pointer;
     position: relative;
@@ -77,7 +77,6 @@
     padding: 16px;
 
     overflow-y: auto;
-    /* overflow-x: hidden; */
 }
 
 .meals__card {

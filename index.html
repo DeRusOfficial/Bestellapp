@@ -16,7 +16,7 @@
     <title>Express Bestellung</title>
 </head>
 
-<body onload="init()">
+<body onload="init()" class="whiteTheme">
     <header class="menu">
         <div class="menu__logo">
             <img src="./assets/icons/logo/logo.png" alt="Logo">
@@ -27,18 +27,18 @@
         </div>
     </header>
 
-    <main>
+    <main class="whiteTheme">
         <section class="main__img">
             <img src="./assets/img/meals/russian/piroggen.jpg" alt="Bild von Piroggen">
         </section>
         <section class="content">
             <section class="content__menu">
                 <h2>Speisen</h2>
-                <nav class="content__menu_categories">
-                    <button onclick="filterMeals('Griechische Gerichte')">Griechische Gerichte</button>
-                    <button onclick="filterMeals('Italienische Gerichte')">Italienische Gerichte</button>
-                    <button onclick="filterMeals('Russische Gerichte')">Russische Gerichte</button>
-                    <button onclick="loadAllMeals()">Alle Gerichte</button>
+                <nav class="content__menu_categories" class="whiteTheme">
+                    <button class="whiteTheme" onclick="filterMeals('Griechische Gerichte')">Griechische Gerichte</button>
+                    <button class="whiteTheme" onclick="filterMeals('Italienische Gerichte')">Italienische Gerichte</button>
+                    <button class="whiteTheme" onclick="filterMeals('Russische Gerichte')">Russische Gerichte</button>
+                    <button class="whiteTheme" onclick="loadAllMeals()">Alle Gerichte</button>
                 </nav>
             </section>
             <section class="content__group">
@@ -65,13 +65,13 @@
                             <td id="sum">5.00 EURO</td>
                         </tr>
                     </table>
-                    <button id="dialogBtn" class="btn-blocked" onclick="openDialog()" disabled>Jetzt bestellen!</button>
+                    <button id="dialogBtn" class="btn-blocked whiteTheme" onclick="openDialog()" disabled>Jetzt bestellen!</button>
                 </section>
             </section>
         </section>
     </main>
 
-    <dialog id="dialog">
+    <dialog id="dialog" class="whiteTheme">
         <section class="modal">
             <div class="modal__header">Ihre Bestellung</div>
             <table class="modal__table">
@@ -86,10 +86,10 @@
 
                 </tbody>
             </table>
-            <div id="cartSum"></div>
+            <div id="modalSum"></div>
             <div class="modal__buttons">
-                <button id="orderBtn" class="modal__content_btn-order" onclick="makeOrder()">Endgültig bestellen</button>
-                <button class="modal__content_btn-close" onclick="closeDialog()">Schließen</button>
+                <button id="orderBtn" class="modal__content_btn-order whiteTheme" onclick="makeOrder()">Endgültig bestellen</button>
+                <button class="modal__content_btn-close whiteTheme" onclick="closeDialog()">Schließen</button>
             </div>
         </section>
     </dialog>

@@ -1,4 +1,6 @@
 let toggleBtn = document.querySelector(".menu__toggle");
+let whiteTheme = document.getElementsByClassName('whiteTheme');
+
 let orderBtn = document.getElementById('orderBtn');
 let dialogBtn = document.getElementById('dialogBtn');
 
@@ -12,12 +14,7 @@ let deliveryCost = 5;
 let dialog = document.getElementById('dialog');
 let tableHead = document.getElementById('tableHead');
 let tableBody = document.getElementById('tableBody');
-
-
-
-function toggleBg() {
-    toggleBtn.classList.toggle("toggle");
-}
+let modalSum = document.getElementById('modalSum');
 
 
 
