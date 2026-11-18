@@ -1,6 +1,6 @@
 function returnMealTemplate(i) {
     return `
-        <div class="meals__card">
+        <div class="meals__card cardWhiteTheme">
             <div class="meals__card_img">
                 <img src="${mealsDatabase[i].img}" alt="${mealsDatabase[i].img}">
             </div>
@@ -10,7 +10,7 @@ function returnMealTemplate(i) {
                 <div class="meals__card_content-price">${mealsDatabase[i].price}</div>
                 <div class="meals__card_content-descr">${mealsDatabase[i].description}</div>
             </div>
-            <button><img src="./assets/icons/counter/plus.svg" alt="Button als Plus-Bild" onclick="addToCart(${i})"></button>
+            <button><img src="./assets/icons/counter/plus.svg" alt="In Warenkorb hinzufügen" onclick="addToCart(${i})"></button>
         </div>
     `;
 }
@@ -45,13 +45,3 @@ function returnCartTemplateAtModal(mealDataLS, i) {
         </tr>
     `;
 }
-
-// `
-// <div class="modal__table_meal">
-//     <div class="modal__table_meal-position">
-//         <p class="meal-name">${mealDataLS[i].name}</p>
-//         <p class="meal-price">${mealDataLS[i].price}</p>
-//     </div>
-//     <p class="modal__content_meal-amount">${mealDataLS[i].amount}x</p>
-// </div>
-// `

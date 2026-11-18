@@ -26,7 +26,17 @@ button {
     color: var(--whiteTheme-color);
 }
 
+.cardWhiteTheme {
+    background-color: var(--cardWhiteTheme-bgColor);
+    color: var(--whiteTheme-color);
+}
+
 .darkTheme {
     background-color: var(--darkTheme-bgColor);
+    color: var(--darkTheme-color);
+}
+
+.cardDarkTheme {
+    background-color: var(--cardDarkTheme-bgColor);
     color: var(--darkTheme-color);
 }

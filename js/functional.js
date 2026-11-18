@@ -87,7 +87,7 @@ function proofCostsForDelivery(totalCosts) {
     if (totalCosts > 25) {
         dialogBtn.classList.remove('btn-blocked');
         dialogBtn.disabled = false;
-    }  else {
+    } else {
         dialogBtn.classList.add('btn-blocked');
         dialogBtn.disabled = true;
     }
@@ -111,17 +111,29 @@ function calculateTaxes(totalCosts) {
 }
 
 function toggleBg() {
-    let array = makeThemeArray()
+    let arrWhiteTheme = makeThemeArr();
+    let arrCardTheme = makeCardThemeArr();
     toggleBtn.classList.toggle('toggle');
-    array.forEach((element) => {
+    arrWhiteTheme.forEach((element) => {
         element.classList.toggle('darkTheme');
+    });
+    arrCardTheme.forEach((element) => {
+        element.classList.toggle('cardDarkTheme');
     });
 }
 
-function makeThemeArray() {
+function makeThemeArr() {
     const whiteThemeArray = [];
     for (let i = 0; i < whiteTheme.length; i++) {
         whiteThemeArray.push(whiteTheme[i])
     }
     return whiteThemeArray
+}
+
+function makeCardThemeArr() {
+    const cardWhiteThemeArray = [];
+    for (let i = 0; i < cardWhiteTheme.length; i++) {
+        cardWhiteThemeArray.push(cardWhiteTheme[i])
+    }
+    return cardWhiteThemeArray
 }

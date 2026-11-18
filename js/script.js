@@ -1,5 +1,6 @@
 let toggleBtn = document.querySelector(".menu__toggle");
 let whiteTheme = document.getElementsByClassName('whiteTheme');
+let cardWhiteTheme = document.getElementsByClassName('cardWhiteTheme');
 
 let orderBtn = document.getElementById('orderBtn');
 let dialogBtn = document.getElementById('dialogBtn');
@@ -19,13 +20,19 @@ let modalSum = document.getElementById('modalSum');
 
 
 function init() {
-    loadAllMeals();
-    showTotalCosts();
     if (localStorage.getItem('mealsDatabaseAtLS') === null) {
-        saveMealsAtLS();
+        firstLoad();
     } else {
+        loadAllMeals();
+        showTotalCosts();
         renderCart();
     }
+}
+
+function firstLoad() {
+    saveMealsAtLS();
+    loadAllMeals();
+    showTotalCosts();
 }
 
 function saveMealsAtLS() {

@@ -3,4 +3,7 @@
     --darkTheme-bgColor: rgb(50, 50, 50);
     --whiteTheme-color: black;
     --darkTheme-color: white;
+
+    --cardWhiteTheme-bgColor: rgb(177, 177, 177);
+    --cardDarkTheme-bgColor: rgb(77, 77, 77);
 }
