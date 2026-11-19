@@ -14,6 +14,20 @@ function filterMeals(filter) {
 }
 
 
+function openCart() {
+    cartSection.classList.add('show-flex');
+    cartSection.classList.remove('not-shown');
+    openCartBtn.classList.add('not-shown');
+    closeCartBtn.classList.remove('not-shown');
+}
+
+function closeCart() {
+    cartSection.classList.add('not-shown');
+    cartSection.classList.remove('show-flex');
+    openCartBtn.classList.remove('not-shown');
+    closeCartBtn.classList.add('not-shown');
+}
+
 function renderCart() {
     let mealDataLS = getMealFromLocalStorage();
     for (let i = 0; i < mealDataLS.length; i++) {

@@ -6,7 +6,11 @@ let orderBtn = document.getElementById('orderBtn');
 let dialogBtn = document.getElementById('dialogBtn');
 
 let mealsField = document.getElementById("mealsField");
+let cartSection = document.getElementById("cartSection");
 let cartField = document.getElementById("cartField");
+let openCartBtn = document.getElementById("openCartBtn");
+let closeCartBtn = document.getElementById("closeCartBtn");
+let sideCart = document.getElementById("sideCart");
 
 let sumField = document.getElementById('sum');
 let taxField = document.getElementById('tax');

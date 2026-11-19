@@ -16,9 +16,21 @@ button {
     align-items: center;
 }
 
+h2 {
+    font-size: 2em;
+}
+
 .btn-blocked {
     cursor: not-allowed;
     opacity: 0.5;
+}
+
+.not-shown {
+    display: none;
+}
+
+.show-flex {
+    display: flex;
 }
 
 .whiteTheme {
@@ -39,4 +51,276 @@ button {
 .cardDarkTheme {
     background-color: var(--cardDarkTheme-bgColor);
     color: var(--darkTheme-color);
+}
+
+#openCartBtn {
+    width: 32px;
+    height: 32px;
+
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1;
+}
+
+#openCartBtn img {
+    width: 100%;
+    height: 100%;
+}
+
+#closeCartBtn {
+    width: 32px;
+    height: 32px;
+
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1;
+}
+
+#closeCartBtn img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+@media (max-width: 480px) {
+    .menu {
+        height: min-content;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .menu__header {
+        text-align: center;
+    }
+
+    .content {
+        padding: 24px;
+    }
+
+    .content__menu {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .content__menu_categories {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .meals {
+        width: 100%;
+    }
+
+    .meals__card {
+        flex-direction: column;
+    }
+
+    .meals__card_img {
+        width: 100%;
+    }
+
+    .meals__card_img>img {
+        width: 100%;
+
+        border-radius: 16px 16px 0 0;
+    }
+
+    .meals__card_content {
+        text-align: center;
+    }
+
+    .meals__card button {
+        padding-bottom: 8px;
+        margin-right: auto;
+    }
+
+    #cartSection {
+        width: 100%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.3);
+        right: unset;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 8px;
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+    }
+
+    .cart__positions_meal {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .cart__positions_meal-details {
+        text-align: center;
+    }
+
+    #dialogBtn {
+        background-color: rgba(0, 0, 0, 0.0);
+    }
+
+    #openCartBtn {
+        top: unset;
+        right: unset;
+        bottom: 0;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #openCartBtn img {
+        transform: rotate(90deg);
+    }
+
+    #closeCartBtn {
+        top: unset;
+        right: unset;
+        bottom: 0;
+        top: 48px;
+        right: 10%;
+        transform: translateX(10%);
+    }
+
+    #closeCartBtn img {
+        transform: rotate(90deg);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .menu {
+        height: min-content;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    #cartSection {
+        width: 360px;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.3);
+        right: unset;
+        bottom: -64px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 8px;
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+    }
+
+    #dialogBtn {
+        background-color: rgba(0, 0, 0, 0.0);
+    }
+
+    .content__menu {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .content__menu_categories {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .meals {
+        width: 100%;
+    }
+
+    .meals__card {
+        flex-direction: column;
+    }
+
+    .meals__card_img {
+        width: 100%;
+    }
+
+    .meals__card_img>img {
+        width: 100%;
+
+        border-radius: 16px 16px 0 0;
+    }
+
+    .meals__card_content {
+        text-align: center;
+    }
+
+    .meals__card button {
+        padding-bottom: 8px;
+        margin-right: auto;
+    }
+
+    #openCartBtn {
+        top: unset;
+        right: unset;
+        bottom: 0;
+        bottom: -64px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #openCartBtn img {
+        transform: rotate(90deg);
+    }
+
+    #closeCartBtn {
+        top: unset;
+        right: unset;
+        bottom: 0;
+        top: 72px;
+        right: 25%;
+        transform: translateX(25%);
+    }
+
+    #closeCartBtn img {
+        transform: rotate(90deg);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1279px) {
+    #cartSection {
+        width: 360px;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.3);
+        right: 0;
+        padding: 8px;
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+    }
+
+    #dialogBtn {
+        background-color: rgba(0, 0, 0, 0.0);
+    }
+
+    .meals {
+        width: 90%;
+    }
+
+    .content__menu {
+        gap: 32px;
+    }
+
+    .content__menu_categories {
+        gap: 12px;
+    }
+}
+
+@media (min-width: 1280px) {
+    #openCartBtn {
+        display: none;
+    }
+
+    #closeCartBtn {
+        display: none;
+    }
+
+    .cart {
+        display: flex;
+    }
 }

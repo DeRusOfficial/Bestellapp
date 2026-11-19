@@ -22,7 +22,7 @@
             <img src="./assets/icons/logo/logo.png" alt="Logo">
         </div>
         <h1 class="menu__header">Express Delivery</h1>
-        <div class="menu__toggle" onclick="toggleBg()">
+        <div tabindex="1" class="menu__toggle" onclick="toggleBg()">
             <div class="menu__toggle_circle"></div>
         </div>
     </header>
@@ -45,8 +45,13 @@
                 <section class="meals" id="mealsField">
 
                 </section>
-
-                <section class="cart">
+                <button tabindex="1" id="closeCartBtn" onclick="closeCart()" class="not-shown">
+                    <img src="./assets/icons/arrows/right.svg" alt="Pfeil für Menü schließen">
+                </button>
+                <button tabindex="1" id="openCartBtn" onclick="openCart()">
+                    <img src="./assets/icons/arrows/left.svg" alt="Pfeil für Menü öffnen">
+                </button>
+                <section id="cartSection" class="cart">
                     <h2 class="cart__header">Warenkorb</h2>
                     <section class="cart__positions" id="cartField">
 

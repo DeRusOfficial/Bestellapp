@@ -19,7 +19,7 @@ function returnCartTemplate(mealData, i) {
     return `
         <div id="position-${mealData[i].name}" class="cart__positions_meal">
             <div class="cart__positions_meal-details">
-                <p class="meal-name">${mealData[i].name}</p>
+                <h3 class="meal-name">${mealData[i].name}</h3>
                 <p class="meal-price">${mealData[i].price}</p>
             </div>
             <div class="cart__positions_meal-amount">
