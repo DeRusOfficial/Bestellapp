@@ -56,7 +56,7 @@ bestellapp/
 
 1. Repository klonen:
    ```bash
-   git clone https://github.com/<dein-username>/bestellapp.git
+   git clone https://github.com/DeRusOfficial/bestellapp.git
    ```
 2. In den Projektordner wechseln:
    ```bash
