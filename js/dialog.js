@@ -1,28 +1,18 @@
-function renderCartAtModal(tableBody, mealDataLS) {
-    let totalCosts = calculateTotalCosts(mealDataLS);
-    modalSum.innerHTML = totalCosts.toFixed(2) + ' EURO';
-    for (let i = 0; i < mealDataLS.length; i++) {
-        if (mealDataLS[i].amount !== 0) {
-            tableBody.innerHTML += returnCartTemplateAtModal(mealDataLS, i);
-        }
-    }
+function openDialog() { 
+    dialog.innerHTML = ``;
+    dialog.innerHTML = `<p>Wir danken für Ihre Bestellung! Diese wird in Kürze bearbeitet und an Ihre Adresse zugestellt.</p>`;
+    dialog.showModal();
+    setTimeout(() => {
+        closeDialog() 
+    }, 3000)
 }
 
-function makeOrder() {
+function closeDialog() {
     let mealDataLS = getMealFromLocalStorage();
     mealsDatabase = mealDataLS;
-    feedbackAfterOrder();
     clearCart(mealsDatabase);
+    dialog.close();
     init();
-}
-
-function feedbackAfterOrder() {
-    tableHead.innerHTML = '';
-    tableBody.innerHTML = '';
-    modalSum.innerHTML = '';
-    tableBody.innerHTML = '<p>Ihre Bestellung wurde aufgegeben und wird in kürze bearbeitet. Wir danken Ihnen vielmals und wünschen Ihnen noch einen angenehmen Tag!</p>';
-    orderBtn.classList.add('btn-blocked');
-    orderBtn.disable = true;
 }
 
 function clearCart(mealsDatabase) {
@@ -34,17 +24,4 @@ function clearCart(mealsDatabase) {
             showTotalCosts();
         }
     }
-}
-
-function openDialog() {
-    let mealDataLS = getMealFromLocalStorage();
-    tableBody.innerHTML = ``;
-    renderCartAtModal(tableBody, mealDataLS);      
-    dialog.showModal();
-}
-
-function closeDialog() {
-    dialog.close();
-    orderBtn.classList.remove('btn-blocked');
-    orderBtn.disable = false;
 }
