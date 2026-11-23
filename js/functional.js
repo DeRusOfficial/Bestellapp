@@ -99,11 +99,11 @@ function showTotalCosts() {
 
 function proofCostsForDelivery(totalCosts) {
     if (totalCosts > 25) {
-        dialogBtn.classList.remove('btn-blocked');
-        dialogBtn.disabled = false;
+        orderBtn.classList.remove('btn-blocked');
+        orderBtn.disabled = false;
     } else {
-        dialogBtn.classList.add('btn-blocked');
-        dialogBtn.disabled = true;
+        orderBtn.classList.add('btn-blocked');
+        orderBtn.disabled = true;
     }
 }
 

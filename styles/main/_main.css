@@ -33,6 +33,7 @@ main {
 }
 
 .content__menu_categories {
+    width: 100%;
     display: flex;
     gap: 24px;
 }
@@ -42,6 +43,14 @@ main {
     text-decoration: none;
     cursor: pointer;
     position: relative;
+}
+
+.content__menu_categories button:nth-child(5) {
+    margin-left: auto;
+}
+
+.content__menu_categories button:nth-child(6) {
+    margin-left: auto;
 }
 
 .content__menu_categories>button:hover {
@@ -59,10 +68,17 @@ main {
     transition: all 255ms ease-in-out;
 }
 
-.content__menu_categories>button:hover::after {
+.content__menu_categories button:hover::after {
     width: 30%;
 }
 
+.content__menu_categories button:nth-child(5):hover::after {
+    width: unset;
+}
+
+.content__menu_categories button:nth-child(6):hover::after {
+    width: unset;
+}
 
 .content__group {
     height: 50dvh;

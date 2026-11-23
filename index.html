@@ -34,23 +34,23 @@
         <section class="content">
             <section class="content__menu">
                 <h2>Speisen</h2>
-                <nav class="content__menu_categories" class="whiteTheme">
+                <nav class="content__menu_categories whiteTheme">
                     <button class="whiteTheme" onclick="filterMeals('Griechische Gerichte')">Griechische Gerichte</button>
                     <button class="whiteTheme" onclick="filterMeals('Italienische Gerichte')">Italienische Gerichte</button>
                     <button class="whiteTheme" onclick="filterMeals('Russische Gerichte')">Russische Gerichte</button>
                     <button class="whiteTheme" onclick="loadAllMeals()">Alle Gerichte</button>
+                    <button tabindex="1" id="openCartBtn" onclick="openCart()">
+                        <img src="./assets/icons/arrows/left.svg" alt="Pfeil für Menü öffnen">
+                    </button>
+                    <button tabindex="1" id="closeCartBtn" onclick="closeCart()" class="not-shown">
+                        <img src="./assets/icons/arrows/right.svg" alt="Pfeil für Menü schließen">
+                    </button>
                 </nav>
             </section>
             <section class="content__group">
                 <section class="meals" id="mealsField">
 
                 </section>
-                <button tabindex="1" id="closeCartBtn" onclick="closeCart()" class="not-shown">
-                    <img src="./assets/icons/arrows/right.svg" alt="Pfeil für Menü schließen">
-                </button>
-                <button tabindex="1" id="openCartBtn" onclick="openCart()">
-                    <img src="./assets/icons/arrows/left.svg" alt="Pfeil für Menü öffnen">
-                </button>
                 <section id="cartSection" class="cart">
                     <h2 class="cart__header">Warenkorb</h2>
                     <section class="cart__positions" id="cartField">
@@ -70,7 +70,7 @@
                             <td id="sum">5.00 EURO</td>
                         </tr>
                     </table>
-                    <button id="dialogBtn" class="btn-blocked whiteTheme" onclick="openDialog()" disabled>Jetzt bestellen!</button>
+                    <button id="orderBtn" class="btn-blocked whiteTheme" onclick="openDialog()" disabled>Jetzt bestellen!</button>
                 </section>
             </section>
         </section>

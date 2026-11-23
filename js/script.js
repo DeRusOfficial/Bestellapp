@@ -3,7 +3,6 @@ let whiteTheme = document.getElementsByClassName('whiteTheme');
 let cardWhiteTheme = document.getElementsByClassName('cardWhiteTheme');
 
 let orderBtn = document.getElementById('orderBtn');
-let dialogBtn = document.getElementById('dialogBtn');
 
 let mealsField = document.getElementById("mealsField");
 let cartSection = document.getElementById("cartSection");
@@ -17,13 +16,11 @@ let taxField = document.getElementById('tax');
 let deliveryCost = 5;
 
 let dialog = document.getElementById('dialog');
-let tableHead = document.getElementById('tableHead');
-let tableBody = document.getElementById('tableBody');
-let modalSum = document.getElementById('modalSum');
 
 
 
 function init() {
+    closeCart();
     if (localStorage.getItem('mealsDatabaseAtLS') === null) {
         firstLoad();
     } else {
