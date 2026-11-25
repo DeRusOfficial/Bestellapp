@@ -40,10 +40,8 @@
                     <button class="whiteTheme" onclick="filterMeals('Russische Gerichte')">Russische Gerichte</button>
                     <button class="whiteTheme" onclick="loadAllMeals()">Alle Gerichte</button>
                     <button tabindex="1" id="openCartBtn" onclick="openCart()">
-                        <img src="./assets/icons/arrows/left.svg" alt="Pfeil für Menü öffnen">
-                    </button>
-                    <button tabindex="1" id="closeCartBtn" onclick="closeCart()" class="not-shown">
-                        <img src="./assets/icons/arrows/right.svg" alt="Pfeil für Menü schließen">
+                        <img src="./assets/icons/cart.svg" alt="Warenkorb öffnen">
+                        <div class="whiteTheme" id="totalAmount">0</div>
                     </button>
                 </nav>
             </section>
@@ -53,7 +51,12 @@
                 </section>
 
                 <section id="cartSection" class="cart">
-                    <h2 class="cart__header">Warenkorb</h2>
+                    <div class="cart__header">
+                        <h2>Warenkorb</h2>
+                        <button tabindex="1" id="closeCartBtn" onclick="closeCart()" class="not-shown">
+                            <img src="./assets/icons/arrows/right.svg" alt="Warenkorb schließen">
+                        </button>
+                    </div>
                     <section class="cart__positions" id="cartField">
 
                     </section>
@@ -69,6 +72,10 @@
                         <tr class="cart__costs_sum">
                             <th>Gesamtsumme:</th>
                             <td id="sum">5.00 EURO</td>
+                        </tr>
+                        <tr class="cart__costs_info">
+                            <th>Mindestbestellwert: </th>
+                            <td>25.00 EURO</td>
                         </tr>
                     </table>
                     <button id="orderBtn" class="btn-blocked whiteTheme" onclick="openDialog()" disabled>Jetzt bestellen!</button>

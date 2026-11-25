@@ -11,6 +11,7 @@ let openCartBtn = document.getElementById("openCartBtn");
 let closeCartBtn = document.getElementById("closeCartBtn");
 let sideCart = document.getElementById("sideCart");
 
+let totalAmount = document.getElementById('totalAmount');
 let sumField = document.getElementById('sum');
 let taxField = document.getElementById('tax');
 let deliveryCost = 5;
@@ -25,6 +26,7 @@ function init() {
         firstLoad();
     } else {
         loadAllMeals();
+        showTotalMealAmount();
         showTotalCosts();
         renderCart();
     }

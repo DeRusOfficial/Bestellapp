@@ -17,15 +17,15 @@ function filterMeals(filter) {
 function openCart() {
     cartSection.classList.add('show-flex');
     cartSection.classList.remove('not-shown');
-    openCartBtn.classList.add('not-shown');
     closeCartBtn.classList.remove('not-shown');
+    document.body.classList.add('no-scroll');
 }
 
 function closeCart() {
     cartSection.classList.add('not-shown');
     cartSection.classList.remove('show-flex');
-    openCartBtn.classList.remove('not-shown');
     closeCartBtn.classList.add('not-shown');
+    document.body.classList.remove('no-scroll');
 }
 
 function renderCart() {
@@ -45,6 +45,7 @@ function addToCart(i) {
         saveMealsAtLS();
         cartField.innerHTML += returnCartTemplate(mealsDatabase, i);
         showTotalCosts();
+        showTotalMealAmount();
     } else {
         addAmount(i);
     }
@@ -58,6 +59,7 @@ function subtractAmount(i) {
         mealsDatabase = mealDataLS;
         mealsDatabase[i].amount--;
         saveMealsAtLS();
+        showTotalMealAmount();
         loadAmountOfMeal(i);
     }
     showTotalCosts();
@@ -68,6 +70,7 @@ function addAmount(i) {
     mealsDatabase = mealDataLS;
     mealsDatabase[i].amount++;
     saveMealsAtLS();
+    showTotalMealAmount();
     loadAmountOfMeal(i);
     showTotalCosts();
 }
@@ -77,6 +80,7 @@ function deletePosition(i) {
     mealsDatabase = mealDataLS;
     mealsDatabase[i].amount = 0;
     saveMealsAtLS();
+    showTotalMealAmount();
     document.getElementById(`position-${mealsDatabase[i].name}`).remove();
     showTotalCosts();
 }
@@ -85,6 +89,17 @@ function loadAmountOfMeal(i) {
     let mealDataLS = getMealFromLocalStorage();
     let amountId = document.getElementById(`amountId-${i}`);
     return amountId.innerHTML = mealDataLS[i].amount;
+}
+
+function showTotalMealAmount() {
+    let mealDataLS = getMealFromLocalStorage();
+    let totalMealAmount = 0;
+    for (let i = 0; i < mealDataLS.length; i++) {
+        if (mealDataLS[i].amount !== 0) {
+            totalMealAmount = totalMealAmount + mealDataLS[i].amount;
+        }
+    }
+    totalAmount.innerHTML = totalMealAmount;
 }
 
 

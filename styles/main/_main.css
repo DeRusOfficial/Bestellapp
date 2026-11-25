@@ -45,14 +45,6 @@ main {
     position: relative;
 }
 
-.content__menu_categories button:nth-child(5) {
-    margin-left: auto;
-}
-
-.content__menu_categories button:nth-child(6) {
-    margin-left: auto;
-}
-
 .content__menu_categories>button:hover {
     color: grey;
 }
@@ -76,13 +68,10 @@ main {
     width: unset;
 }
 
-.content__menu_categories button:nth-child(6):hover::after {
-    width: unset;
-}
-
 .content__group {
     display: flex;
     flex-direction: row;
+    gap: 16px;
 }
 
 .meals {
@@ -133,6 +122,12 @@ main {
 }
 
 .cart__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cart__header>h2 {
     font-size: 24px;
     text-align: center;
 }
